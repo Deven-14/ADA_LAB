@@ -31,7 +31,8 @@ void floydWarshall(int V, int **graph)//[V][V])
 		}
 	}
 	
-	//printShortestPath(V, D);
+	printf("\nAfter : \n");
+	printShortestPath(V, D);
 	for(int i = 0; i < V; ++i)
     	free(D[i]);
     free(D);
@@ -89,7 +90,8 @@ int main()
 		}
 	}
 	
-	//printShortestPath(V, graph);
+	printf("Before : \n");
+	printShortestPath(V, graph);
 	
 	clock_t start, end;
 	

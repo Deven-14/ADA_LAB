@@ -66,11 +66,11 @@ void solveNQueen(int n)
 		return ;
 	}
 	
-	//cout << "The Board is : " << endl;
+	cout << "The Board is : " << endl;
 	//printBoard(board);
-	//for(auto x : queenIndices)
-		//cout << "(" << x.first+1 <<", "<< x.second+1 << ") " ;
-	//cout << endl;
+	for(auto x : queenIndices)
+		cout << "(" << x.first+1 <<", "<< x.second+1 << ") " ;
+	cout << endl;
 }
 
 int main()

@@ -179,9 +179,10 @@ int main()
 	
 	double timeReq = ((double)end - start)/CLOCKS_PER_SEC;
 	
+	printGraph(mst);
+	
 	printf("The time it took is : %lf\n", timeReq);
 	
-	//printGraph(mst);
 	freeGraph(&forest);
 	freeGraph(&mst);
 	return 0;

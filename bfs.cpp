@@ -78,7 +78,7 @@ void Graph::BFS(int source)
 		if(visited.find(node->data) != visited.end())//if key is not present in visited then conti, i.e. if key is not visited then conti
 			continue;
 			
-		//cout << node->data << ", ";
+		cout << node->data << ", ";
 		visited.insert(node->data);
 		
 		for(Node *n : node->adjacent)

@@ -77,8 +77,8 @@ int main()
 	for(int i = 0; i < n; ++i)
 		list[i] = rand()%1000;
 	
-	//printf("\nBefore Sorting : \n");
-	//printList(n, list);
+	printf("\nBefore Sorting : \n");
+	printList(n, list);
 	
 	clock_t start, end;
 	
@@ -86,8 +86,8 @@ int main()
 	heapSort(n, list);
 	end = clock();
 	
-	//printf("\nAfter Sorting : \n");
-	//printList(n, list);
+	printf("\nAfter Sorting : \n");
+	printList(n, list);
 	
 	double timeReq = (double)(end - start)/CLOCKS_PER_SEC;
 	printf("The time Required is : %lf\n", timeReq);

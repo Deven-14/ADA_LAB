@@ -71,7 +71,7 @@ int main()
 		text[i] = (char)(rand() % 26 + 97);
 	text[nt] = '\0';
 	
-	//printf("text : %s\n", text);
+	printf("text : %s\n", text);
 	
 	
 	clock_t start, end;
