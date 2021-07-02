@@ -6,8 +6,7 @@
 
 void merge(int *list, int low, int mid, int high)
 {
-	int size = high - low + 1;
-	int *tempList = (int*)calloc(size, sizeof(int));
+	int *tempList = (int*)calloc(high - low + 1, sizeof(int));
 	
 	int i = low;
 	int j = mid + 1;
@@ -15,9 +14,16 @@ void merge(int *list, int low, int mid, int high)
 	
 	while(i <= mid && j <= high)
 	{
-		if(list[i] <= list[j])
+		/*if(list[i] <= list[j])
 			tempList[k++] = list[i++];
 		else
+			tempList[k++] = list[j++];*///3 compares here, 1) i<=mid, 2)j<=high, 3)list[i]<=list[j]
+		
+		//only 2 compares in this method
+		while(i <= mid && list[i] <= list[j])
+			tempList[k++] = list[i++];
+		
+		while(j <= high && list[j] <= list[i])
 			tempList[k++] = list[j++];
 		//sleep(0.0001);
 	}
@@ -30,8 +36,8 @@ void merge(int *list, int low, int mid, int high)
 			tempList[k++] = list[i++];
 	
 	
-	for(int l = 0; l < size; ++l)
-		list[l + low] = tempList[l];
+	for(int l = low, k = 0; l <= high; ++l, ++k)
+		list[l] = tempList[k];
 	
 	free(tempList);
 }
