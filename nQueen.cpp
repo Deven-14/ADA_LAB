@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <ctime>
 #include <unordered_set>
 #include <utility>
@@ -9,7 +10,7 @@ struct pair_hash
 {
     template <class T1, class T2>
     std::size_t operator() (const std::pair<T1, T2> &pair) const {
-        return std::hash<T1>()(pair.first) ^ std::hash<T2>()(pair.second);
+        return (std::hash<T1>()(pair.first) * 263 + std::hash<T2>()(pair.second))%1000000007;
     }
 };
 
@@ -23,7 +24,7 @@ bool isSafe(unordered_set<pair<int, int>, pair_hash> &queenIndices, int row, int
 		if(x.second == col)
 			return false;
 			
-		if((row - x.first) == (col - x.second))
+		if(abs(row - x.first) == abs(col - x.second))
 			return false;
 		
 	}
